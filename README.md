@@ -38,11 +38,11 @@ Now that you understand the basic structure of a GitHub Action, we will see on i
 
 In this exercise, we will run our first GitHub Action It is already defined so you don't have to do too much to see it execute and the result of its execution.
 
-Let's assume we have developed an application that is open source and is wildely popular with developers. As developers use your application, they also find bugs and ways to improve the application. When they do, they usually submit a GitHub issue. We need a way of making sure that we triage all the new issues appropriately. In this exercise, we will work with a GitHub Action that automatically tags all new issues that are submitted with the label `triage`.
+Let's assume we have developed an application that is open source and is wildly popular with developers. As developers use your application, they also find bugs and ways to improve the application. When they do, they usually submit a GitHub issue. We need a way of making sure that we triage all the new issues appropriately. In this exercise, we will work with a GitHub Action that automatically tags all new issues that are submitted with the label `triage`.
 
 To see the it in action, simply create a new issue with any title. Stay on the page and wait until the label `triage` magically appears. When it does, you know the GitHub Action did it's job.
 
-You can also view every run of a GitHub Action by clicking on `Actions` in the repository toolbar. The green checkmark indicates that the run was successfull. Clicking on the job name, tells you more about that paricular run. On the next page, click on the box that indicates the job that was executed as part of that action. Now you see all the details of the run.
+You can also view every run of a GitHub Action by clicking on `Actions` in the repository toolbar. The green checkmark indicates that the run was successful. Clicking on the job name, tells you more about that particular run. On the next page, click on the box that indicates the job that was executed as part of that action. Now you see all the details of the run.
 
 ## Exercise 2 - Smarter Issue Labeling
 
@@ -71,7 +71,7 @@ jobs:
         configuration-path: "issue-rules.yml"
 ```
 
-The GitHub Action specified above is very simple: it executed when an issue is openend or re-opened. It then checks out your repository code and runs the [`tag-ur-it`](https://github.com/damccorm/tag-ur-it) job. It can do more than just label issues. The behavior is configured in `config/issue-rules.yml`. Note that the file specifies that if the term `enpm611` appears in the issue text, the issue is assigned to the GitHub user `enpm611`:
+The GitHub Action specified above is very simple: it executed when an issue is opened or re-opened. It then checks out your repository code and runs the [`tag-ur-it`](https://github.com/damccorm/tag-ur-it) job. It can do more than just label issues. The behavior is configured in `config/issue-rules.yml`. Note that the file specifies that if the term `enpm611` appears in the issue text, the issue is assigned to the GitHub user `enpm611`:
 
 ```yaml
 rules:
@@ -89,12 +89,12 @@ After you created that file, push your changes to the repository. Then, work on 
 
 ## Exercise 3 - Continuous Integration
 
-Continous Integration (CI) relies heavily on automating processes so that we an focus on development and let tools take care of giving us feedback when something goes wrong. Hence, a core part of CI is to automated the running of tests whenever someone pushes code to the repository. The goal is to get immediate feedback telling us that whether what we commited is of acceptable quality.
+Continuous Integration (CI) relies heavily on automating processes so that we an focus on development and let tools take care of giving us feedback when something goes wrong. Hence, a core part of CI is to automated the running of tests whenever someone pushes code to the repository. The goal is to get immediate feedback telling us that whether what we commited is of acceptable quality.
 
 Now, you will create a new GitHub Action. First, in the folder `.github/workflows`, create a file named `autotest.yml`. Then, copy and paste the following YAML specification into the file and save it:
 
 ```yaml
-name: "Continous Integration"
+name: "Continuous Integration"
 
 on: push
 
