@@ -44,7 +44,7 @@ To see the it in action, simply create a new issue with any title. Stay on the p
 
 You can also view every run of a GitHub Action by clicking on `Actions` in the repository toolbar. The green checkmark indicates that the run was successfull. Clicking on the job name, tells you more about that paricular run. On the next page, click on the box that indicates the job that was executed as part of that action. Now you see all the details of the run.
 
-## Exercise 3 - Smarter Issue Labeling
+## Exercise 2 - Smarter Issue Labeling
 
 We have already seen an example of labeling issues automatically for triage. However, we might want GitHub Actions to perform smarter tagging by recognizing what type of issue the user submitted. We can implement it from scratch or we can use an [existing library](https://github.com/damccorm/tag-ur-it) to do most of the work for us. The repository description for [`tag-ur-it`](https://github.com/damccorm/tag-ur-it) describes how to set up and configure custom labeling.
 
